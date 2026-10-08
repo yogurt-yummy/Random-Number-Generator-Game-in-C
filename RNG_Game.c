@@ -12,6 +12,7 @@ int main()
 
     int random_number = (rand() % 100) + 1;
     int user_guess;
+    int guess_counter = 0;
 
     printf("||=========================================================================||\n");
     printf("||                       Guess The Number (1 - 100)                        ||\n");
@@ -28,18 +29,20 @@ int main()
         if (user_guess == random_number)
         {
             printf("You guessed it.\n");
+            guess_counter++;
         }
         else if (user_guess > random_number)
         {
             printf("Try guessing lower.\n");
+            guess_counter++;
         }
         else if (user_guess < random_number)
         {
             printf("Try guessing higher.\n");
+            guess_counter++;
         }
     }while(user_guess != random_number);
-
-    
+    printf("\nYou guessed in %d guesses.",guess_counter);
 
     return 0;
 }
